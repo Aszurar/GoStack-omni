@@ -1,21 +1,23 @@
 const express = require('express'); 
 const {v4: uuidV4, isUuid} = require('uuid')
 const app = express();
+const cors = require('cors');
 
 app.use(express.json());
+app.use(cors())
 
 const projects = [];
 
-function logRequest(request, response, next) {
-  const { method, url } = request;
-  const logLabel = `[${method.toUpperCase()}] ${url}`;
+// function logRequest(request, response, next) {
+//   const { method, url } = request;
+//   const logLabel = `[${method.toUpperCase()}] ${url}`;
 
-  console.log('1')
-  console.time(logLabel);  
-  next();
-  console.timeEnd(logLabel);
-  console.log('2')
-}
+//   console.log('1')
+//   console.time(logLabel);  
+//   next();
+//   console.timeEnd(logLabel);
+//   console.log('2')
+// }
 
 function validadeProjectId(request, response, next) {
   const { id } = request.params;
@@ -26,7 +28,7 @@ function validadeProjectId(request, response, next) {
   return next();
 } 
 
-app.use(logRequest);
+// app.use(logRequest);
 
 app.get('/projects', (req, res) => {
   console.log('3')
@@ -47,7 +49,7 @@ app.post('/projects', (req, res) => {
   return res.json(project);
 })
 
-app.put('/projects/:id', validadeProjectId, (req, res) => {
+app.put('/projects/:id', validadeProjectId,(req, res) => {
   const  { id } = req.params;
   const { title } = req.body;
   projectIndex = projects.findIndex(project => project.id === id);
