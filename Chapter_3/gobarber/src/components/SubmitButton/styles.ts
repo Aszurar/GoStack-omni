@@ -16,7 +16,7 @@ export const Container = styled.div`
       margin: 1.5rem 0;
       color: var(--background);
       background-color: var(--orange-400);
-
+      font-weight: 500;
       transition: 0.3s background-color;
 
       line-height: 1.319rem;
