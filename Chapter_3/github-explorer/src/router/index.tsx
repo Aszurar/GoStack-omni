@@ -7,7 +7,7 @@ export function Routes() {
   return (
     <Router>
       <Route path="/" element={<Dashboard />} />
-      <Route path="/repositories/:repository+" element={<Repository />} />
+      <Route path="/repositories/:repository" element={<Repository />} />
     </Router>
   );
 }

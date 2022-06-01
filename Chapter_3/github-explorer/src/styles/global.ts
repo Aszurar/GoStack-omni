@@ -9,8 +9,10 @@ export const GlobalStyle = createGlobalStyle`
     --dark-400: #3A3A3A;
     --dark-500: #3D3D4D;
 
-    --gray-400: #ABABB3;
-    --gray-300: #C9C9D4;
+    --gray-400: #A8A8B3;
+    --gray-300: #737380;
+    --gray-200: #C9C9D4;
+    --gray-100: #6C6C80;
 
     --green-400: #04D361;
 
@@ -55,6 +57,7 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     color: inherit;
+    cursor: pointer;
     //fazendo com que a cor padrão do a seja a mesma do seu elemento pai!
     text-decoration: none;
   }

@@ -25,6 +25,7 @@
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/function-component-definition": 0,
+    "react/require-default-props": 0,
     "import/prefer-default-export": 0,
     "react/jsx-filename-extension": [
       1,

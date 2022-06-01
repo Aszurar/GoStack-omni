@@ -2,12 +2,7 @@
 import { shade, setLightness } from 'polished';
 import styled, { css } from 'styled-components';
 
-export const Logo = styled.img`
-  align-self: flex-start;
-  height: 2rem;
-`;
-
-export const Header = styled.div`
+export const DashboardHeader = styled.div`
   display: flex;
   margin-top: 6.25rem;
   flex-direction: column;
@@ -138,7 +133,7 @@ margin-top: 7.5rem;
   }
     svg {
     margin-left: auto;
-    color: var(--gray-300);
+    color: var(--gray-200);
   }
 }
 `;

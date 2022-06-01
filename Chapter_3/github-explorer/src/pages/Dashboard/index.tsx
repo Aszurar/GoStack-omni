@@ -1,13 +1,12 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { FiChevronRight } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
-import LogoSvg from '../../assets/logo.svg';
+import { Header } from '../../components/Header';
 import { api } from '../../services/api';
 import {
   ErrorText,
   Form,
-  Header,
-  Logo,
+  DashboardHeader,
   RepositoriesList,
   SearchButton,
   SearchInput,
@@ -65,12 +64,9 @@ export function Dashboard() {
 
   return (
     <>
-      <Logo
-        src={LogoSvg}
-        alt="Logo"
-      />
+      <Header />
 
-      <Header>
+      <DashboardHeader>
         <Title>
           Explore repositórios
           <br />
@@ -94,26 +90,29 @@ export function Dashboard() {
         </Form>
 
         {!!inputError && <ErrorText>{inputError}</ErrorText>}
-      </Header>
+      </DashboardHeader>
 
       <RepositoriesList>
         {
-          repositories.map((repository) => (
-            <Link to={`/repositories/${repository.full_name}`} key={repository.full_name}>
-              <img
-                src={repository.owner.avatar_url}
-                alt={repository.owner.login}
-              />
+          repositories.map((repository) => {
+            const urlCoded = encodeURIComponent(repository.full_name);
+            return (
+              <Link to={`/repositories/${urlCoded}`} key={repository.full_name}>
+                <img
+                  src={repository.owner.avatar_url}
+                  alt={repository.owner.login}
+                />
 
-              <div>
-                <strong>{repository.full_name}</strong>
-                <p>{repository.description}</p>
-              </div>
-              <FiChevronRight
-                size={32}
-              />
-            </Link>
-          ))
+                <div>
+                  <strong>{repository.full_name}</strong>
+                  <p>{repository.description}</p>
+                </div>
+                <FiChevronRight
+                  size={32}
+                />
+              </Link>
+            );
+          })
         }
 
       </RepositoriesList>
