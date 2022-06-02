@@ -27,6 +27,7 @@ interface RepositoryInfo {
 interface Issue {
   id: number;
   title: string;
+  html_url: string;
   user: {
     login: string;
   }
@@ -78,6 +79,7 @@ export const Repository: React.FC = () => {
       <RepositoryList>
         {(issue.length > 0) && issue.map((item: Issue) => (
           <RepositoryCard
+            htmlUrl={item.html_url}
             key={item.id}
             title={item.title}
             author={item.user.login}
