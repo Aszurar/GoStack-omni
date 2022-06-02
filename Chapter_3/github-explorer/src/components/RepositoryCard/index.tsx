@@ -5,12 +5,17 @@ import {
   Container,
 } from './styles';
 
-export function RepositoryCard() {
+interface RepositoryCardProps {
+  title: string;
+  author: string;
+}
+
+export function RepositoryCard({ title, author }: RepositoryCardProps) {
   return (
     <Container>
       <div>
-        <h1>gostack-desafio-conceitos-react-native</h1>
-        <span>Diego Fernandes</span>
+        <h1>{title}</h1>
+        <span>{author}</span>
       </div>
       <FiChevronRight />
     </Container>

@@ -52,9 +52,9 @@ export function Dashboard() {
 
       setRepositories([...repositories, repository]);
       setInputError('');
-    } catch (error: any) {
+    } catch (error) {
       setInputError('Erro ao buscar repositório');
-      throw new Error('Erro ao buscar repositório', error.message);
+      console.log(error);
     }
   }
 

@@ -7,8 +7,8 @@ header {
 
     align-items: center;
     img {
-      width: 7.5rem;
-      height: 7.5rem;
+      width: 7rem;
+      height: 7rem;
       border-radius: 50%;
     }
 

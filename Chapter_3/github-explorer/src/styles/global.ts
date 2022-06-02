@@ -25,7 +25,6 @@ export const GlobalStyle = createGlobalStyle`
       outline: 0;
       box-sizing: border-box;
       text-decoration: none;
-
   }
 
   @media(max-width: 1080px) {
