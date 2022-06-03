@@ -8,20 +8,20 @@ export const Container = styled.div`
   align-items: center;
 
   button {
-      flex: 1;
-      height: 3.5rem;
+    flex: 1;
+    height: 3.5rem;
 
-      border: none;
-      border-radius: 0.625rem;
-      margin: 1.5rem 0;
-      color: var(--background);
-      background-color: var(--orange-400);
-      font-weight: 500;
-      transition: 0.3s background-color;
+    border: none;
+    border-radius: 0.625rem;
+    margin: 1.5rem 0;
+    color: var(--background);
+    background-color: var(--orange-400);
+    font-weight: 500;
+    transition: 0.3s background-color;
 
-      line-height: 1.319rem;
-      &:hover {
-        background-color: ${shade(0.2, `#FF9000`)};
-      }
+    line-height: 1.319rem;
+    &:hover {
+      background-color: ${shade(0.2, `#FF9000`)};
     }
+  }
 `;

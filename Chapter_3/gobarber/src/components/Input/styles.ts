@@ -17,13 +17,15 @@ export const Container = styled.div<ContainerProps>`
   background-color: var(--black-600);
   border-radius: 0.625rem;
 
-  ${({ isFocused }) => isFocused && css`
-    border-bottom-color: var(--orange-400);
-  `}
+  ${({ isFocused }) =>
+    isFocused &&
+    css`
+      border-color: var(--orange-400);
+    `}
 
   & + div {
-      margin-top: 0.5rem;
-    }
+    margin-top: 0.5rem;
+  }
 
   div {
     height: 100%;
@@ -39,8 +41,8 @@ export const Container = styled.div<ContainerProps>`
     svg {
       width: 1.25rem;
       height: 1.125rem;
-      color: ${({ isFocused, isFilled }) => (isFocused || isFilled)
-    ? 'var(--orange-400)' : 'var(--gray-500)'}
+      color: ${({ isFocused, isFilled }) =>
+    isFocused || isFilled ? 'var(--orange-400)' : 'var(--gray-500)'};
     }
   }
 

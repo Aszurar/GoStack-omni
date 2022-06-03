@@ -1,12 +1,12 @@
 import React from 'react';
-import Logo from '../../assets/logo.svg';
 import { FiLogIn, FiLock } from 'react-icons/fi';
-import { Background, Container, Content } from './styles';
 import { FiMail } from 'react-icons/fi';
+import Logo from '../../assets/logo.svg';
+import { Background, Container, Content } from './styles';
 import { Input } from '../../components/Input';
 import { SubmitButton } from '../../components/SubmitButton';
 
-export function SignIn() {
+export const SignIn: React.FC = () => {
   return (
     <Container>
       <Content>
@@ -28,7 +28,7 @@ export function SignIn() {
             icon={FiLock}
             placeholder="Senha"
           />
-          <SubmitButton title='Entrar' />
+          <SubmitButton title="Entrar" />
 
           <a href="forgot">Esqueci minha senha</a>
         </form>
@@ -41,4 +41,4 @@ export function SignIn() {
       <Background />
     </Container>
   );
-}
+};
