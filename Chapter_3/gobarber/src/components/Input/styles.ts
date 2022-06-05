@@ -19,8 +19,6 @@ export const Container = styled.div<ContainerProps>`
   background-color: var(--black-600);
   border-radius: 0.625rem;
 
-  padding-right: 1rem;
-
   ${({ isErrored }) =>
     isErrored &&
     css`
@@ -47,7 +45,6 @@ export const Container = styled.div<ContainerProps>`
     justify-content: center;
 
     border-radius: 0.625rem 0 0 0.625rem;
-
     svg {
       width: 1.25rem;
       height: 1.125rem;
@@ -58,8 +55,7 @@ export const Container = styled.div<ContainerProps>`
 
   input {
     display: flex;
-    flex: 1;
-
+    width: 100%;
     height: 3.5rem;
     border: none;
     border-radius: 0 0.625rem 0.625rem 0;
@@ -77,12 +73,15 @@ export const Container = styled.div<ContainerProps>`
 `;
 
 export const ErrorContainer = styled(Tooltip)`
-  height: 2.5rem;
   display: flex;
+  flex: 1;
   align-items: center;
+  justify-content: center;
+  height: 100%;
 
+  border-radius: 0 0.625rem 0.625rem 0;
   svg {
-    margin-left: 0.5rem;
+    margin: 0 0.5rem;
   }
   span {
     background-color: var(--red-400);

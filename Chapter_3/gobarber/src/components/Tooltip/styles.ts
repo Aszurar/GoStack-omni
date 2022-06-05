@@ -2,7 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   position: relative;
+  display: flex;
+  flex: 1;
+
   span {
+    display: flex;
+    flex: 1;
+
     width: 12.5rem;
 
     padding: 0.5rem;
