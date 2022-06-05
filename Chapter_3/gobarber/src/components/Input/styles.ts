@@ -1,8 +1,10 @@
 import styled, { css } from 'styled-components';
+import { Tooltip } from '../Tooltip';
 
 interface ContainerProps {
   isFocused: boolean;
   isFilled: boolean;
+  isErrored: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -17,6 +19,14 @@ export const Container = styled.div<ContainerProps>`
   background-color: var(--black-600);
   border-radius: 0.625rem;
 
+  padding-right: 1rem;
+
+  ${({ isErrored }) =>
+    isErrored &&
+    css`
+      border-color: var(--red-400);
+    `}
+
   ${({ isFocused }) =>
     isFocused &&
     css`
@@ -27,7 +37,7 @@ export const Container = styled.div<ContainerProps>`
     margin-top: 0.5rem;
   }
 
-  div {
+  div:first-child {
     height: 100%;
 
     display: flex;
@@ -62,6 +72,24 @@ export const Container = styled.div<ContainerProps>`
     ::placeholder {
       color: var(--gray-500);
       line-height: 1.313rem;
+    }
+  }
+`;
+
+export const ErrorContainer = styled(Tooltip)`
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+
+  svg {
+    margin-left: 0.5rem;
+  }
+  span {
+    background-color: var(--red-400);
+    color: var(--white);
+
+    &:before {
+      border-color: var(--red-400) transparent;
     }
   }
 `;
