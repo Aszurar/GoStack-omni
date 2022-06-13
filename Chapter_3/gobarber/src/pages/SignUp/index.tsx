@@ -20,7 +20,7 @@ const schema = Yup.object().shape({
 export const SignUp: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
-  const handleSignUp = useCallback((data: object): void => {
+  const handleSignUp = useCallback(async (data: object) => {
     try {
       formRef.current?.setErrors({});
       console.log('dados do submit:', data);

@@ -22,11 +22,9 @@ export const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(false);
-  // const [isErrored, setIsErrored] = useState(error);
 
   const handleInputFocused = useCallback((): void => {
     setIsFocused(true);
-    // setIsErrored(undefined);
   }, []);
 
   const handleInputBlur = useCallback((): void => {
@@ -42,10 +40,6 @@ export const Input: React.FC<InputProps> = ({ name, icon: Icon, ...rest }) => {
     });
   }, [fieldName, registerField]);
 
-  // useEffect(() => {
-  //   console.log('erro', error);
-  //   setIsErrored(error);
-  // }, [error]);
   return (
     <Container isFocused={isFocused} isFilled={isFilled} isErrored={!!error}>
       {Icon && (

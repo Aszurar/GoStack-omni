@@ -6,7 +6,7 @@ import signInBackground from '../../assets/signIn_background.svg';
 export const Container = styled.div`
   display: flex;
 
-    height: 100vh;
+  height: 100vh;
   align-items: stretch;
 `;
 
@@ -37,15 +37,12 @@ export const Content = styled.div`
     max-width: 340px;
     width: 100%;
 
-
     h1 {
       font-size: 2rem;
       color: var(--white-400);
 
       margin-bottom: 1.5rem;
     }
-
-
 
     a {
       color: var(--white-400);
@@ -59,24 +56,24 @@ export const Content = styled.div`
   }
 
   > a {
-      display: flex;
-      align-items: center;
-      color: var(--orange-400);
-      line-height: 1.319rem;
+    display: flex;
+    align-items: center;
+    color: var(--orange-400);
+    line-height: 1.319rem;
 
-      transition: 0.3s background-color;
+    transition: 0.3s background-color;
 
-      &:hover {
-        color: ${shade(0.2, `#FF9000`)};
-      }
-
-      svg {
-        width: 1.25rem;
-        height: 1.25rem;
-
-        margin-right: 1rem;
-      }
+    &:hover {
+      color: ${shade(0.2, `#FF9000`)};
     }
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+
+      margin-right: 1rem;
+    }
+  }
 `;
 
 export const Background = styled.div`
